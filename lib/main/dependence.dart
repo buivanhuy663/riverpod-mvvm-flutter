@@ -3,13 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../data/repositories/repository.dart';
 import '../data/services/data_source.dart';
 import '../data/services/http_client/dio_client.dart';
 import '../data/services/http_client/http_client.dart';
 import '../data/services/http_client/interceptor/dio_interceptor.dart';
 import '../data/services/local_storage/secure/secure_storage_provider.dart';
 import '../data/services/local_storage/share_preference/share_preference_provider.dart';
-import '../data/repositories/repository.dart';
 import '../view/base/app_lifecycle.dart';
 import 'app_flavor.dart';
 
@@ -25,10 +25,7 @@ class Dependence {
         receiveTimeout: const Duration(seconds: 20),
       ),
     );
-    dio.interceptors.addAll([
-      DioInterceptor(),
-      LogInterceptor(),
-    ]);
+    dio.interceptors.addAll([DioInterceptor(), LogInterceptor()]);
 
     final dioClient = DioClient(dio, baseUrl: appFlavor.baseUrl);
 

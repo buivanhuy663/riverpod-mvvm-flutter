@@ -1,7 +1,7 @@
-import '../services/data_source.dart';
-import '../services/local_storage/share_preference/share_preference_key.dart';
 import '../models/auth/login_request_model.dart';
 import '../models/auth/login_response_model.dart';
+import '../services/data_source.dart';
+import '../services/local_storage/share_preference/share_preference_key.dart';
 
 class AuthRepository {
   AuthRepository(
