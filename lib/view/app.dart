@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'resources/strings/app_localizations.dart';
 import '../main/app_flavor.dart';
 import '../main/dependence.dart';
 import 'base/app_lifecycle.dart';
@@ -10,6 +9,7 @@ import 'base/go_router.dart';
 import 'base/responsive_wrapper.dart';
 import 'base/support_locale.dart';
 import 'resources/app_theme.dart';
+import 'resources/strings/app_localizations.dart';
 
 class App extends StatefulWidget {
   const App({required this.appFlavor, super.key});
@@ -20,7 +20,8 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> with WidgetsBindingObserver, AppLifecycleMixin {
+class _AppState extends State<App>
+    with WidgetsBindingObserver, AppLifecycleMixin {
   final _appLifecycle = injector.read(appLifecycleProvider);
 
   @override
