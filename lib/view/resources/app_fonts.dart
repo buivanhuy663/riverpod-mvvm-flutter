@@ -1,4 +1,4 @@
-part of './resources.dart';
+part of 'resources.dart';
 
 class AppFonts {
   AppFonts._();

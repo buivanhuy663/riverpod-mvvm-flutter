@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'l10n/app_localizations.dart';
-import 'main/app_flavor.dart';
-import 'main/dependence.dart';
-import 'presentation/core/app_lifecycle.dart';
-import 'presentation/core/go_router.dart';
-import 'presentation/core/responsive_wrapper.dart';
-import 'presentation/core/support_locale.dart';
-import 'presentation/resources/app_theme.dart';
+import '../l10n/app_localizations.dart';
+import '../main/app_flavor.dart';
+import '../main/dependence.dart';
+import 'core/app_lifecycle.dart';
+import 'core/go_router.dart';
+import 'core/responsive_wrapper.dart';
+import 'core/support_locale.dart';
+import 'resources/app_theme.dart';
 
 class App extends StatefulWidget {
   const App({required this.appFlavor, super.key});

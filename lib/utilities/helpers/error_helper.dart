@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
-import '../../presentation/resources/resources.dart';
+import '../../view/resources/resources.dart';
 import '../extensions/extensions.dart';
 
 class ErrorHelper {

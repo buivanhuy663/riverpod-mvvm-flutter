@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 import '../../../../main/dependence.dart';
-import '../../../../presentation/resources/resources.dart';
+import '../../../../view/resources/resources.dart';
 import '../../../../utilities/helpers/network_helper.dart';
 import '../../../models/core/api_response_model.dart';
 import '../../../repositories/repository.dart';

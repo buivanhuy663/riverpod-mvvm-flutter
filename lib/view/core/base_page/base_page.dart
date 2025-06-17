@@ -9,7 +9,7 @@ import '../../components/loading_wrapper/loading_wrapper.dart';
 import '../../components/visibility_wrapper.dart';
 import '../../resources/resources.dart';
 import '../refresh_service.dart';
-import './base_page_mixin.dart';
+import 'base_page_mixin.dart';
 import 'base_view_model.dart';
 
 /// Every page needs to inherit from this class.

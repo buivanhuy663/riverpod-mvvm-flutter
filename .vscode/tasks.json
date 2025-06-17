@@ -13,5 +13,11 @@
             "command": "fvm flutter gen-l10n",
             "group": "build"
         },
+        {
+            "label": "Pub Get",
+            "type": "shell",
+            "command": "fvm flutter pub get",
+            "group": "build"
+        },
     ],
 }

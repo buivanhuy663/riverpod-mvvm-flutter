@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../app.dart';
+import '../view/app.dart';
 import '../utilities/helpers/logger_helper.dart';
 import 'app_flavor.dart';
 import 'dependence.dart';

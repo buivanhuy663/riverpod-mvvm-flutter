@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../progress_indicator_platform.dart';
-import './bloc/loading_wrapper_state.dart';
+import 'bloc/loading_wrapper_state.dart';
 import 'bloc/loading_wrapper_view_model.dart';
 
 class LoadingWrapper extends ConsumerWidget {
