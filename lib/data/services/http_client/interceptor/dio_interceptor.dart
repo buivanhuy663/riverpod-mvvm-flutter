@@ -13,6 +13,9 @@ import '../api_constants.dart';
 class DioInterceptor extends QueuedInterceptorsWrapper {
   DioInterceptor();
 
+  // final _context = globalContext;
+
+  /// Whether request requires authentication or not.
   bool isAuthenticatedPath(RequestOptions options) =>
       !ApiConstants.nonAuthenticatedPaths.contains(options.path);
 
@@ -43,6 +46,15 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
       'Accept-Language': 'vi',
       'Connection': 'keep-alive',
       'Content-Type': 'application/json;charset=UTF-8',
+      'Host': 'cskh-api.cpc.vn',
+      'Sec-Fetch-Dest': 'empty',
+      'Sec-Fetch-Mode': 'cors',
+      'Sec-Fetch-Site': 'same-site',
+      'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
+      'sec-ch-ua': "'Not(A:Brand';v='99', 'Google Chrome';v='133', 'Chromium';v='133'",
+      'sec-ch-ua-mobile': '?0',
+      'sec-ch-ua-platform': "'Windows'",
     };
     options.headers.addAll(headers);
 
@@ -137,8 +149,28 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
     handler.next(err);
   }
 
-  Future<void> _logout() async {
-  }
+  // Future<Response<dynamic>> _retryRequest(
+  //   String refreshedAccessToken,
+  //   RequestOptions requestOptions,
+  // ) {
+  //   requestOptions.headers['Authorization'] = 'Bearer $refreshedAccessToken';
+
+  //   _dio.options.baseUrl = requestOptions.baseUrl;
+  //   // _dio.options.connectTimeout = Duration.millisecondsPerSecond * 60;
+  //   // _dio.options.receiveTimeout = Duration.millisecondsPerSecond * 60;
+
+  //   return _dio.request<dynamic>(
+  //     requestOptions.path,
+  //     data: requestOptions.data,
+  //     queryParameters: requestOptions.queryParameters,
+  //     options: Options(
+  //       method: requestOptions.method,
+  //       headers: requestOptions.headers,
+  //     ),
+  //   );
+  // }
+
+  Future<void> _logout() async {}
 
   /// [_isForceLogout] is true
   /// when the user is deleted, not the token is wrong or expired.
