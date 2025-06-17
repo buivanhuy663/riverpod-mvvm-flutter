@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../l10n/app_localizations.dart';
+import 'strings/app_localizations.dart';
 import '../base/go_router.dart';
 
 part 'app_colors.dart';
