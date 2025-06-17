@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../view/base/base_page/base_page.dart';
+import '../../view/base/base_page.dart';
 import '../constants/responsive_boundary.dart';
 
 part 'build_context_ex.dart';

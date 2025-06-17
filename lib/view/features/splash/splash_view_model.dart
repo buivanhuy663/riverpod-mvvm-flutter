@@ -1,4 +1,4 @@
-import '../../base/base_page/base_view_model.dart';
+import '../../base/base_page.dart';
 
 class SplashViewModel extends BaseViewModel<void> {
   SplashViewModel() : super(null);

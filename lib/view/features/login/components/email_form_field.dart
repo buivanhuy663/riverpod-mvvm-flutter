@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../utils/helpers/logger_helper.dart';
-import '../../../base/base_page/base_view_model.dart';
+import '../../../base/base_page.dart';
 import '../../../base/components/custom_text_form_field.dart';
 import '../../../resources/resources.dart';
 import '../view_model/login_state.dart';

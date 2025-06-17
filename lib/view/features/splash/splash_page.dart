@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../base/base_page/base_page.dart';
+import '../../base/base_page.dart';
 import '../../base/go_router.dart';
 import 'splash_view_model.dart';
 
@@ -11,8 +11,7 @@ class SplashPage extends BasePage {
   const SplashPage({super.key});
 
   @override
-  BasePageState<SplashPage, SplashViewModel> createState() =>
-      _SplashViewState();
+  BasePageState<SplashPage, SplashViewModel> createState() => _SplashViewState();
 }
 
 class _SplashViewState extends BasePageState<SplashPage, SplashViewModel> {

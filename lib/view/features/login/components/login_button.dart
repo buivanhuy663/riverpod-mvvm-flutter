@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../base/base_page/base_view_model.dart';
+import '../../../base/base_page.dart';
 import '../../../resources/resources.dart';
 import '../view_model/login_state.dart';
 import '../view_model/login_view_model.dart';
