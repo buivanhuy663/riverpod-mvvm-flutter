@@ -54,7 +54,7 @@ class LoggerHelper {
       colors: true,
       noBoxingByDefault: true,
       excludePaths: [
-        'package:bloc_minimal/utilities/helpers/logger_helper.dart',
+        'package:riverpod_mvvm/utilities/helpers/logger_helper.dart',
       ],
     ),
   );

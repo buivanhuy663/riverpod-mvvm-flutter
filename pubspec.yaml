@@ -1,4 +1,4 @@
-name: bloc_minimal
+name: riverpod_mvvm
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -41,6 +41,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
+  table_calendar: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -57,3 +58,8 @@ flutter:
   uses-material-design: true
   generate: true
   
+localizations:
+  arb-dir: lib\resources\strings
+  template-arb-file: app_en.arb
+  output-localization-file: app_localizations.dart
+

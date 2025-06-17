@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -13,7 +11,6 @@ import '../data/services/local_storage/secure_storage.dart';
 import '../data/services/local_storage/share_preference.dart';
 import '../data/services/services.dart';
 import '../view/base/app_lifecycle.dart';
-import '../view/base/theme_support.dart';
 import 'app_flavor.dart';
 
 var injector = ProviderContainer();

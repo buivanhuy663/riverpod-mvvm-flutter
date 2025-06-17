@@ -1,6 +1,6 @@
 {
-    "name": "bloc_minimal",
-    "short_name": "bloc_minimal",
+    "name": "riverpod_mvvm",
+    "short_name": "riverpod_mvvm",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

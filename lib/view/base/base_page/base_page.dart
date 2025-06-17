@@ -4,9 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../utils/helpers/error_helper.dart';
 import '../../resources/resources.dart';
 import '../base_dialog/dialog_platform.dart';
-import '../components/loading_wrapper/loading_wrapper.dart';
-import '../components/loading_wrapper/viewmodel/loading_wrapper_state.dart';
-import '../components/loading_wrapper/viewmodel/loading_wrapper_view_model.dart';
+import '../components/loading_wrapper.dart';
 import '../components/visibility_wrapper.dart';
 import '../refresh_service.dart';
 import 'base_page_mixin.dart';
@@ -24,10 +22,9 @@ abstract class BasePageState<Page extends BasePage, VM extends BaseViewModel>
   late LoadingWrapperViewModel _loadingViewModel;
 
   final _loadingProvider =
-      StateNotifierProvider.autoDispose<
-        LoadingWrapperViewModel,
-        LoadingWrapperState
-      >((ref) => LoadingWrapperViewModel());
+      StateNotifierProvider.autoDispose<LoadingWrapperViewModel, bool>(
+        (ref) => LoadingWrapperViewModel(),
+      );
 
   bool isShowingError = false;
 

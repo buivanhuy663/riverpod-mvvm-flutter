@@ -6,10 +6,10 @@ import '../main/app_flavor.dart';
 import '../main/dependence.dart';
 import 'base/app_lifecycle.dart';
 import 'base/go_router.dart';
-import 'base/responsive_wrapper.dart';
 import 'base/locale_support.dart';
+import 'base/responsive_wrapper.dart';
 import 'base/theme_support.dart';
-import 'resources/app_theme.dart';
+import 'resources/resources.dart';
 import 'resources/strings/app_localizations.dart';
 
 class App extends StatefulWidget {
@@ -58,7 +58,9 @@ class _AppState extends State<App>
       supportedLocales: SupportLocale.support,
       theme: ThemeData(
         brightness: ref.watch(themeProvider),
-        scaffoldBackgroundColor: colors.background,
+        scaffoldBackgroundColor: ref.watch(themeProvider) == Brightness.light
+            ? ColorsDefine.colorsLight.background
+            : ColorsDefine.colorsDark.background,
       ),
       builder: (context, widget) => getResponsiveWrapper(context, widget),
     ),

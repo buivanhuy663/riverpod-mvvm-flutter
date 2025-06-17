@@ -1,4 +1,4 @@
-package com.example.bloc_minimal
+package com.example.riverpod_mvvm
 
 import io.flutter.embedding.android.FlutterActivity
 
