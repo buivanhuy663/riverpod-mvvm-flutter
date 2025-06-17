@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 
-import '../../../../utilities/helpers/logger_helper.dart';
+import '../../../../utils/helpers/logger_helper.dart';
 
 class LoggerInterceptor extends Interceptor {
   LoggerInterceptor({

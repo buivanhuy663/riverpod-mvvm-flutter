@@ -1,5 +1,5 @@
 // ignore_for_file: deprecated_member_use_from_same_package
-part of './extensions.dart';
+part of 'extensions.dart';
 
 extension FutureEx<T> on Future<T> {
   /// Call this function to show a loading full screen on page

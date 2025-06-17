@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../utilities/helpers/error_helper.dart';
+import '../../../utils/helpers/error_helper.dart';
 import '../../resources/resources.dart';
 import '../base_dialog/dialog_platform.dart';
 import '../components/loading_wrapper/loading_wrapper.dart';

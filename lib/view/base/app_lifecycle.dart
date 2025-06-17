@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../main/dependence.dart';
-import '../../utilities/helpers/logger_helper.dart';
+import '../../utils/helpers/logger_helper.dart';
 
 final appLifecycleProvider = Provider<AppLifecycle>(
   (ref) => throw UnimplementedError(),

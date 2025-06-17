@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utilities/helpers/logger_helper.dart';
+import '../../../utils/helpers/logger_helper.dart';
 
 mixin BasePageMixin {
   /// This function is called when the start page state is initialized.

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../utilities/constants/regex_constants.dart';
+import '../../../utils/constants/regex_constants.dart';
 import '../../resources/resources.dart';
 
 part 'email_entity.freezed.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utilities/extensions/extensions.dart';
+import '../../../utils/extensions/extensions.dart';
 
 /// Every dialog needs to inherit from [BaseDialog].
 ///

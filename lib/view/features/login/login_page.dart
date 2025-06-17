@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../utilities/extensions/extensions.dart';
+import '../../../utils/extensions/extensions.dart';
 import '../../base/base_page/base_page.dart';
 import 'components/email_form_field.dart';
 import 'components/login_button.dart';

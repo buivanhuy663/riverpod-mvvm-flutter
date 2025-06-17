@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../utilities/extensions/extensions.dart';
+import '../../../utils/extensions/extensions.dart';
 import '../../resources/resources.dart';
 
 part 'password_entity.freezed.dart';

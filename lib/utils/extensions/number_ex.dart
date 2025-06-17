@@ -1,4 +1,4 @@
-part of './extensions.dart';
+part of 'extensions.dart';
 
 extension NumberEx on num {
   double screenUtil(

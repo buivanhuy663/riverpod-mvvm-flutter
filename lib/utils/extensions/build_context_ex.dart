@@ -1,4 +1,4 @@
-part of './extensions.dart';
+part of 'extensions.dart';
 
 extension BuildContextEx on BuildContext {
   Size get screenSize => MediaQuery.of(this).size;

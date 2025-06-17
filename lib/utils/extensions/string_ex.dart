@@ -1,4 +1,4 @@
-part of './extensions.dart';
+part of 'extensions.dart';
 
 extension StringExNullable on String? {
   // ignore: force_null_safety
