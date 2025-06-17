@@ -1,4 +1,4 @@
-import '../../../core/base_page/base_view_model.dart';
+import '../../../base/base_page.dart';
 import '_replace_snake_came_state.dart';
 
 class ReplacePascalCameViewModel extends BaseViewModel<ReplacePascalCameState> {

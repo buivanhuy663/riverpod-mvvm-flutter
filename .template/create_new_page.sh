@@ -87,7 +87,7 @@ create_new_page() {
 }
 
 # Thư mục gốc
-dir="lib/presentation/features"
+dir="lib/view/features"
 nameSnake=""
 namePascal=""
 
@@ -102,3 +102,5 @@ if [ ! -d "$newDir" ]; then
 else
     echo "Thư mục $newDir đã tồn tại. Tạo trang $nameSnake thất bại."
 fi
+
+fvm flutter pub run build_runner build --delete-conflicting-outputs
