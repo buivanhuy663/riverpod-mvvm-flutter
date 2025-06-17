@@ -1,11 +1,9 @@
-import '../services/data_source.dart';
+import '../services/services.dart';
 
 class HomeRepository {
-  HomeRepository(
-    this._dataSource,
-  );
+  HomeRepository(this._services);
 
-  final DataSource _dataSource;
+  final Services _services;
 
-  Future<dynamic> getData() => _dataSource.dio.getData();
+  Future<dynamic> getData() => _services.dio.getData();
 }

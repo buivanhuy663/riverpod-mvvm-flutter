@@ -7,7 +7,8 @@ import '../main/dependence.dart';
 import 'base/app_lifecycle.dart';
 import 'base/go_router.dart';
 import 'base/responsive_wrapper.dart';
-import 'base/support_locale.dart';
+import 'base/locale_support.dart';
+import 'base/theme_support.dart';
 import 'resources/app_theme.dart';
 import 'resources/strings/app_localizations.dart';
 
@@ -55,7 +56,10 @@ class _AppState extends State<App>
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: SupportLocale.support,
-      theme: getAppTheme(Brightness.light),
+      theme: ThemeData(
+        brightness: ref.watch(themeProvider),
+        scaffoldBackgroundColor: colors.background,
+      ),
       builder: (context, widget) => getResponsiveWrapper(context, widget),
     ),
   );

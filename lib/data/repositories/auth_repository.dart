@@ -1,27 +1,26 @@
 import '../models/auth/login_request_model.dart';
 import '../models/auth/login_response_model.dart';
-import '../services/data_source.dart';
-import '../services/local_storage/share_preference/share_preference_key.dart';
+import '../services/local_storage/local_storage_key.dart';
+import '../services/services.dart';
 
 class AuthRepository {
-  AuthRepository(
-    this._dataSource,
-  );
+  AuthRepository(this._services);
 
-  final DataSource _dataSource;
+  final Services _services;
 
-  Future<LoginResponseModel> login(
-    LoginRequestModel loginRequest,
-  ) async {
-    final response = await _dataSource.http.login(loginRequest);
+  Future<LoginResponseModel> login(LoginRequestModel loginRequest) async {
+    final response = await _services.http.login(loginRequest);
     return response;
   }
 
   bool saveTokenToLocalStorage(String accessToken) {
-    _dataSource.sharedPreferences.setString(SharePreferenceKey.accessToken, accessToken);
+    _services.sharedPreference.setString(
+      LocalStorageKey.accessToken,
+      accessToken,
+    );
     return true;
   }
 
   String? getAccessToken() =>
-      _dataSource.sharedPreferences.getString(SharePreferenceKey.accessToken);
+      _services.sharedPreference.getString(LocalStorageKey.accessToken);
 }

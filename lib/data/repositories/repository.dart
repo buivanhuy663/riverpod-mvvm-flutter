@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../services/data_source.dart';
+import '../services/services.dart';
 import 'auth_repository.dart';
 import 'home_repository.dart';
 
@@ -9,9 +9,9 @@ final repositoryProvider = Provider<Repository>(
 );
 
 class Repository {
-  Repository(DataSource dataSource) {
-    auth = AuthRepository(dataSource);
-    home = HomeRepository(dataSource);
+  Repository(Services services) {
+    auth = AuthRepository(services);
+    home = HomeRepository(services);
   }
 
   late AuthRepository auth;

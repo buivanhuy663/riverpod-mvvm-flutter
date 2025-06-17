@@ -1,12 +1,7 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-final secureStorageProvider = Provider<SecureStorageProvider>(
-  (ref) => throw UnimplementedError(),
-);
-
-class SecureStorageProvider {
-  SecureStorageProvider(this._secureStorage);
+class SecureStorage {
+  SecureStorage(this._secureStorage);
 
   final FlutterSecureStorage _secureStorage;
 
