@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../data_sources/data_source.dart';
+import '../services/data_source.dart';
 import 'auth_repository.dart';
 import 'home_repository.dart';
 

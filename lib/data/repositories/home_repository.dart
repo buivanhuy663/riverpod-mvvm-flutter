@@ -1,4 +1,4 @@
-import '../data_sources/data_source.dart';
+import '../services/data_source.dart';
 
 class HomeRepository {
   HomeRepository(

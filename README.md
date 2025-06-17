@@ -1,25 +1,39 @@
-# bloc_minimal
+# Riverpod MVVM Flutter
 
-A new Flutter project.
+Boilerplate for flutter app
+
+- State management : rivepod
+- Dependence : riverpod
+- Architecture : MVVM
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Install FVM if you want (https://fvm.app/documentation/getting-started/installation)
+2. Run `flutter pub get`
+3. Launch
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 ## File struct
-- lib
-|   - data
-|   - main
-|   - utilities
-|   - view
-|
-|
+```
+lib/
+├── main.dart
+├── data/
+│   ├── models/
+│   ├── repositories/
+│   └── services/
+├── utils/
+│   ├── constants/
+│   ├── extensions/
+│   └── helpers/
+├── view/
+│   ├── app.dart
+│   ├── base/
+│   ├── entities/
+│   ├── features/
+│   │   └── page_one/
+│   │       ├── page.dart
+│   │       └── viewmodel/
+│   │           ├── state.dart
+│   │           └── view_model.dart
+│   └── resources/
+```

@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../data/data_sources/http_client/api_constants.dart';
+import '../data/services/http_client/api_constants.dart';
 
 final appFlavorProvider = Provider<AppFlavor>(
   (ref) => AppFlavor(appFlavorType: AppFlavorType.development, baseUrl: ''),
