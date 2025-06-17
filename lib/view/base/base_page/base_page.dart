@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utilities/helpers/error_helper.dart';
-import '../../components/dialog/dialog_platform.dart';
-import '../../components/loading_wrapper/bloc/loading_wrapper_state.dart';
-import '../../components/loading_wrapper/bloc/loading_wrapper_view_model.dart';
-import '../../components/loading_wrapper/loading_wrapper.dart';
-import '../../components/visibility_wrapper.dart';
 import '../../resources/resources.dart';
+import '../base_dialog/dialog_platform.dart';
+import '../components/loading_wrapper/loading_wrapper.dart';
+import '../components/loading_wrapper/viewmodel/loading_wrapper_state.dart';
+import '../components/loading_wrapper/viewmodel/loading_wrapper_view_model.dart';
+import '../components/visibility_wrapper.dart';
 import '../refresh_service.dart';
 import 'base_page_mixin.dart';
 import 'base_view_model.dart';

@@ -11,7 +11,7 @@ class CounterButton extends StatelessWidget {
     super.key,
   });
 
-  final AutoDisposeStateNotifierProvider<ReplacePascalCameViewModel, ReplacePascalCameState>
+  final ViewModelProvider<ReplacePascalCameViewModel, ReplacePascalCameState>
   provider;
 
   final Function() onPressed;

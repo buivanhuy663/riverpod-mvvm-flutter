@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../data/models/auth/login_response_model.dart';
-import '../../../core/base_page/base_view_model.dart';
-import '../../../core/support_locale.dart';
+import '../../../base/base_page/base_view_model.dart';
+import '../../../base/support_locale.dart';
 import '../../../entities/account/email_entity.dart';
 import '../../../entities/account/password_entity.dart';
 import 'login_state.dart';

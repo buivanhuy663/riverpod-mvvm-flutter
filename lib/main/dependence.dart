@@ -10,7 +10,7 @@ import '../data/data_sources/http_client/interceptor/dio_interceptor.dart';
 import '../data/data_sources/local_storage/secure/secure_storage_provider.dart';
 import '../data/data_sources/local_storage/share_preference/share_preference_provider.dart';
 import '../data/repositories/repository.dart';
-import '../view/core/app_lifecycle.dart';
+import '../view/base/app_lifecycle.dart';
 import 'app_flavor.dart';
 
 var injector = ProviderContainer();

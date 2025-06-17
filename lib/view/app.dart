@@ -5,10 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../l10n/app_localizations.dart';
 import '../main/app_flavor.dart';
 import '../main/dependence.dart';
-import 'core/app_lifecycle.dart';
-import 'core/go_router.dart';
-import 'core/responsive_wrapper.dart';
-import 'core/support_locale.dart';
+import 'base/app_lifecycle.dart';
+import 'base/go_router.dart';
+import 'base/responsive_wrapper.dart';
+import 'base/support_locale.dart';
 import 'resources/app_theme.dart';
 
 class App extends StatefulWidget {

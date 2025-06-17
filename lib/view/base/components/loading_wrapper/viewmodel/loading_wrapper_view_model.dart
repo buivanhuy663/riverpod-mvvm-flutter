@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../../core/base_page/base_view_model.dart';
+import '../../../base_page/base_view_model.dart';
 import 'loading_wrapper_state.dart';
 
 class LoadingWrapperViewModel extends BaseViewModel<LoadingWrapperState> {

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../utilities/helpers/logger_helper.dart';
-import '../../../components/custom_text_form_field.dart';
+import '../../../base/base_page/base_view_model.dart';
+import '../../../base/components/custom_text_form_field.dart';
 import '../../../resources/resources.dart';
 import '../view_model/login_state.dart';
 import '../view_model/login_view_model.dart';
@@ -10,7 +11,7 @@ import '../view_model/login_view_model.dart';
 class EmailFormField extends ConsumerWidget {
   const EmailFormField({required this.provider, super.key});
 
-  final AutoDisposeStateNotifierProvider<LoginViewModel, LoginState> provider;
+  final ViewModelProvider<LoginViewModel, LoginState> provider;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

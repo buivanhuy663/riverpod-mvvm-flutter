@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/base_page/base_page.dart';
-import '../../core/go_router.dart';
+import '../../base/base_page/base_page.dart';
+import '../../base/go_router.dart';
 import 'splash_view_model.dart';
 
 final _provider = StateNotifierProvider.autoDispose((ref) => SplashViewModel());

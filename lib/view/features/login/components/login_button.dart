@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../base/base_page/base_view_model.dart';
 import '../../../resources/resources.dart';
 import '../view_model/login_state.dart';
 import '../view_model/login_view_model.dart';
@@ -12,7 +13,7 @@ class LoginButton extends ConsumerWidget {
     super.key,
   });
 
-  final AutoDisposeStateNotifierProvider<LoginViewModel, LoginState> provider;
+  final ViewModelProvider<LoginViewModel, LoginState> provider;
 
   final Function() onPressed;
 

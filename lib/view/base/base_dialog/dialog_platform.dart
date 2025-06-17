@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/base_dialog/base_dialog.dart';
 import '../../resources/resources.dart';
+import 'base_dialog.dart';
 
 enum TypeDialog { alert, confirm }
 
