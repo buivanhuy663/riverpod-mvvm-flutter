@@ -38,7 +38,7 @@ class Dependence {
     final secureStorage = SecureStorage(const FlutterSecureStorage());
 
     // ignore: join_return_with_assignment
-    injector = ProviderContainer(
+    return ProviderContainer(
       overrides: [
         appFlavorProvider.overrideWithValue(appFlavor),
 
@@ -51,6 +51,5 @@ class Dependence {
         ),
       ],
     );
-    return injector;
   }
 }

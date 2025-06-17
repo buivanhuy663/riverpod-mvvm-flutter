@@ -13,10 +13,10 @@ void mainCommon(AppFlavor appFlavor) {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
 
-      final container = await Dependence.initDependence(appFlavor);
+      injector = await Dependence.initDependence(appFlavor);
       runApp(
         UncontrolledProviderScope(
-          container: container,
+          container: injector,
           child: App(appFlavor: appFlavor),
         ),
       );
