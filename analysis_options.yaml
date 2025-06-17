@@ -34,6 +34,10 @@ analyzer:
     implicit-casts: true # default
     implicit-dynamic: true # default
 
+formatter:
+  trailing_commas: preserve
+  page_width: 100
+
 linter:
   rules:
     # You must define all rules here

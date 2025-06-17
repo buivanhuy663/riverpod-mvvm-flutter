@@ -46,7 +46,12 @@ class Dependence {
 
         repositoryProvider.overrideWithValue(
           Repository(
-            Services(dioClient, httpClient, sharedPreference, secureStorage),
+            Services(
+              dioClient,
+              httpClient,
+              sharedPreference,
+              secureStorage,
+            ),
           ),
         ),
       ],
