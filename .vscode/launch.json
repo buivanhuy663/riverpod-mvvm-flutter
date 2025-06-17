@@ -1,0 +1,66 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "development_debug",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "development",
+        "-v"
+      ],
+      "program": "lib/main/main_development.dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "development_release",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "development",
+        "-v"
+      ],
+      "program": "lib/main/main_development.dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "production_debug",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "production",
+        "-v"
+      ],
+      "program": "lib/main/main_production.dart",
+      "flutterMode": "debug"
+    },
+    {
+      "name": "production_release",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "production",
+        "-v"
+      ],
+      "program": "lib/main/main_production.dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "custom_lint_debug",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "-v"
+      ],
+      "program": "custom_lint/tools/custom_lint_debug.dart",
+      "flutterMode": "debug"
+    }
+  ]
+}
