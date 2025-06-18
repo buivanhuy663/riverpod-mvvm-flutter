@@ -90,7 +90,7 @@ abstract class BasePageState<Page extends BasePage, VM extends BaseViewModel>
             }
           : null,
       child: Scaffold(
-        backgroundColor: backgroundColor ?? AppColors.of(context).background,
+        backgroundColor: backgroundColor ?? AppColors.get.background,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         appBar: buildAppBar(context),
         body: buildBody(context),

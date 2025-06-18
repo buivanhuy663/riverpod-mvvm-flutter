@@ -3,8 +3,9 @@ part of 'resources.dart';
 class AppColors {
   AppColors._();
 
-  static ColorsDefine of(BuildContext context) {
-    final brightness = Theme.of(context).brightness;
+  static ColorsDefine get get {
+    final context = navigatorKey.currentContext;
+    final brightness = context != null ? Theme.of(context).brightness : Brightness.light;
     switch (brightness) {
       case Brightness.light:
         return ColorsDefine.colorsLight;
@@ -12,8 +13,6 @@ class AppColors {
         return ColorsDefine.colorsDark;
     }
   }
-
-  static const text = Colors.black;
 }
 
 class ColorsDefine {
