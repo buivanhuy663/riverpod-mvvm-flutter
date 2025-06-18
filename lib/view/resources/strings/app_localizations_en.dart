@@ -53,8 +53,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password_invalid => 'Please enter a valid password.';
 
   @override
-  String get network_error =>
-      'Network error. Please check your connection and try again.';
+  String get network_error => 'Network error. Please check your connection and try again.';
 
   @override
   String get server_error => 'Server error. Please try again later.';
@@ -63,6 +62,5 @@ class AppLocalizationsEn extends AppLocalizations {
   String get timeout_error => 'Request timed out. Please try again later.';
 
   @override
-  String get unknown_error =>
-      'An unknown error occurred. Please try again later.';
+  String get unknown_error => 'An unknown error occurred. Please try again later.';
 }

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils/extensions/extensions.dart';
 import '../../base/base_page.dart';
+import '../../resources/resources.dart';
 import 'components/email_form_field.dart';
 import 'components/login_button.dart';
 import 'components/password_form_field.dart';
@@ -32,9 +33,11 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          AppSvg.todoChecked,
+          AppImages.flutter,
           const SizedBox(height: 64),
           EmailFormField(provider: _provider),
           const SizedBox(height: 8),

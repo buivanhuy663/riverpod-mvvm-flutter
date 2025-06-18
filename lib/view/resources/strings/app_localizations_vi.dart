@@ -53,17 +53,14 @@ class AppLocalizationsVi extends AppLocalizations {
   String get password_invalid => 'Vui lòng nhập mật khẩu hợp lệ.';
 
   @override
-  String get network_error =>
-      'Lỗi mạng. Vui lòng kiểm tra kết nối của bạn và thử lại.';
+  String get network_error => 'Lỗi mạng. Vui lòng kiểm tra kết nối của bạn và thử lại.';
 
   @override
   String get server_error => 'Lỗi máy chủ. Vui lòng thử lại sau.';
 
   @override
-  String get timeout_error =>
-      'Yêu cầu đã hết thời gian chờ. Vui lòng thử lại sau.';
+  String get timeout_error => 'Yêu cầu đã hết thời gian chờ. Vui lòng thử lại sau.';
 
   @override
-  String get unknown_error =>
-      'Đã xảy ra lỗi không xác định. Vui lòng thử lại sau.';
+  String get unknown_error => 'Đã xảy ra lỗi không xác định. Vui lòng thử lại sau.';
 }
