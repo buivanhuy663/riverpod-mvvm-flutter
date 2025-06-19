@@ -3,7 +3,7 @@
 Boilerplate for flutter app
 
 - Architecture : MVVM
-- State management : rivepod
+- State management : riverpod
 - Dependence : riverpod
 
 ## Getting Started
@@ -24,7 +24,7 @@ Boilerplate for flutter app
 
 
 
-## Architechture (MVVM)
+## Architecture (MVVM)
 [Guide to app architecture](https://docs.flutter.dev/app-architecture/guide)
 
 ![alt text](https://raw.githubusercontent.com/buivanhuy663/riverpod-mvvm-flutter/refs/heads/main/.github/image/mvvm.png)
@@ -75,7 +75,7 @@ lib/
 │   ├── features/
 │   │   └── page_one/
 │   │       ├── page.dart
-│   │       └── viewmodel/
+│   │       └── view_model/
 │   │           ├── state.dart
 │   │           └── view_model.dart
 │   └── resources/
@@ -104,7 +104,7 @@ to create a page with struct
 lib/view/features
 │   │   └── new_page_name/
 │   │       ├── new_page_name.dart
-│   │       └── viewmodel/
+│   │       └── view_model/
 │   │           ├── new_page_name_state.dart
 │   │           └── new_page_name_view_model.dart
 ```

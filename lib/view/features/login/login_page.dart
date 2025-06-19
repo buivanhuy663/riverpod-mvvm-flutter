@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils/extensions/extensions.dart';
 import '../../base/base_page.dart';
-import '../../resources/resources.dart';
 import 'components/email_form_field.dart';
 import 'components/login_button.dart';
 import 'components/password_form_field.dart';
