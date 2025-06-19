@@ -56,14 +56,58 @@ lib/
 │   └── resources/
 ```
 
-
-
 ## How to
 
-### Create new screen
-run cmd in bash. new_page_name is snake_case
+### Create new screen (Suggest)
+run cmd in bash or git bash terminal. new_page_name is snake_case
 ```
 bash .template/create_new_page.sh new_page_name
+```
+to create a page with struct
+```
+lib/view/features
+│   │   └── new_page_name/
+│   │       ├── new_page_name.dart
+│   │       └── viewmodel/
+│   │           ├── new_page_name_state.dart
+│   │           └── new_page_name_view_model.dart
+```
+
+Every page needs to inherit from `BasePage` class
+```dart
+/// Every page needs to inherit from `BasePage` class.
+/// A page should not be created with `StateFulWidget`
+abstract class BasePage extends ConsumerStatefulWidget {
+  const BasePage({super.key});
+}
+
+abstract class BasePageState<Page extends BasePage, VM extends BaseViewModel>
+    extends ConsumerState<Page>
+    with BasePageMixin, WidgetsBindingObserver {
+  late LoadingWrapperViewModel _loadingViewModel;
+
+  final _loadingProvider = StateNotifierProvider.autoDispose<LoadingWrapperViewModel, bool>(
+    (ref) => LoadingWrapperViewModel(),
+  );
+}
+
+// We have
+// This provide state notifier management
+final _provider = StateNotifierProvider.autoDispose<LoginViewModel, LoginState>(
+  (ref) => LoginViewModel(),
+);
+
+class LoginPage extends BasePage {
+  const LoginPage({super.key});
+
+  @override
+  BasePageState<LoginPage, LoginViewModel> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
+  @override
+  LoginViewModel get viewModel => ref.read(_provider.notifier);
+}
 ```
 
 ### Create a state observable widget
@@ -90,7 +134,7 @@ class CounterButton extends StatelessWidget {
   Widget build(BuildContext context) => Consumer(
     builder: (context, ref, child) => ElevatedButton(
       onPressed: () {
-        ref.read(provider.notifier).counter();
+        provider.viewModel(ref).counter()
       },
       child: Text('${provider.listen(ref, (state) => state.count)}'), // provider.listen
     ),

@@ -20,8 +20,8 @@ class EmailFormField extends ConsumerWidget {
       hintText: AppText.get?.enter_email,
       labelText: AppText.get?.email,
       keyboardType: TextInputType.emailAddress,
-      errorText: ref.watch(provider.select((value) => value.email)).errorText,
-      onChanged: ref.read(provider.notifier).onEmailChanged,
+      errorText: provider.listen(ref, (value) => value.email.errorText),
+      onChanged: provider.viewModel(ref).onEmailChanged,
     );
   }
 }

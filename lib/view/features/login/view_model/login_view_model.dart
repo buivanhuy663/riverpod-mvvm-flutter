@@ -28,8 +28,9 @@ class LoginViewModel extends BaseViewModel<LoginState> {
 
   void onChangeLocale(WidgetRef ref) {
     state = state.copyWith(isValidButton: !state.isValidButton);
-    ref
-        .read(localeProvider.notifier)
+
+    localeProvider
+        .viewModel(ref)
         .setLocale(state.isValidButton ? SupportLocale.en : SupportLocale.vn);
   }
 

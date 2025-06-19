@@ -21,7 +21,7 @@ class ReplacePascalCamePage extends BasePage {
 class _ReplacePascalCamePageState
     extends BasePageState<ReplacePascalCamePage, ReplacePascalCameViewModel> {
   @override
-  ReplacePascalCameViewModel get viewModel => ref.read(_provider.notifier);
+  ReplacePascalCameViewModel get viewModel => _provider.viewModel(ref);
 
   @override
   PreferredSizeWidget? buildAppBar(BuildContext context) => null;

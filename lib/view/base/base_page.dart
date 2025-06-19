@@ -39,7 +39,7 @@ abstract class BasePageState<Page extends BasePage, VM extends BaseViewModel>
     super.initState();
     //Inject instance presenter for this page
     RefreshService.addPageInitialized(pageName);
-    _loadingViewModel = ref.read(_loadingProvider.notifier);
+    _loadingViewModel = _loadingProvider.viewModel(ref);
     onInitState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => onStateCreated(context),

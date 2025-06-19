@@ -20,7 +20,7 @@ class CounterButton extends StatelessWidget {
   Widget build(BuildContext context) => Consumer(
     builder: (context, ref, child) => ElevatedButton(
       onPressed: () {
-        ref.read(provider.notifier).counter();
+        provider.viewModel(ref).counter();
       },
       child: Text('${provider.listen(ref, (state) => state.count)}'),
     ),

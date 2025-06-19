@@ -16,7 +16,7 @@ class SplashPage extends BasePage {
 
 class _SplashViewState extends BasePageState<SplashPage, SplashViewModel> {
   @override
-  SplashViewModel get viewModel => ref.read(_provider.notifier);
+  SplashViewModel get viewModel => _provider.viewModel(ref);
 
   @override
   void onInitState() {

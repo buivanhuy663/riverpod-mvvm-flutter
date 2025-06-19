@@ -23,7 +23,7 @@ class LoginPage extends BasePage {
 
 class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
   @override
-  LoginViewModel get viewModel => ref.read(_provider.notifier);
+  LoginViewModel get viewModel => _provider.viewModel(ref);
 
   @override
   PreferredSizeWidget? buildAppBar(BuildContext context) => null;

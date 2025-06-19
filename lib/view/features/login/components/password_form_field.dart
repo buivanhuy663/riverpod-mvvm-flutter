@@ -20,8 +20,8 @@ class PasswordFormField extends ConsumerWidget {
       hintText: AppText.get?.enter_password,
       labelText: AppText.get?.password,
       keyboardType: TextInputType.text,
-      errorText: ref.watch(provider.select((value) => value.password)).errorText,
-      onChanged: ref.read(provider.notifier).onPasswordChanged,
+      errorText: provider.listen(ref, (value) => value.password.errorText),
+      onChanged: provider.viewModel(ref).onPasswordChanged,
     );
   }
 }
