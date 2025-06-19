@@ -184,3 +184,6 @@ class CounterButton extends StatelessWidget {
 1. Use widget in `lib\view\base\components\network_image.dart`
 
 
+### Guide
+1. [Route Guide](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/route_guide.md).
+
