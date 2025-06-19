@@ -80,6 +80,17 @@ lib/
 │   │           └── view_model.dart
 │   └── resources/
 ```
+### Guide
+1. [Route ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/route_guide.md).
+2. [New Page ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/guide_using_base_page.md).
+3. [New Dialog ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/dialog_guide.md).
+4. [Future loading ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/guide_future_ex.md).
+5. [Theme ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/colors_guide.md).
+6. [Image ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/.readme/image_guide.md).
+7. [Svg ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/svg_guide.md).
+
+
+
 
 ## How to
 
@@ -184,6 +195,4 @@ class CounterButton extends StatelessWidget {
 1. Use widget in `lib\view\base\components\network_image.dart`
 
 
-### Guide
-1. [Route Guide](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/route_guide.md).
 

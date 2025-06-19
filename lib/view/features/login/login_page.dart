@@ -36,8 +36,6 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          AppSvg.todoChecked,
-          AppImages.flutter,
           const SizedBox(height: 64),
           EmailFormField(provider: _provider),
           const SizedBox(height: 8),
