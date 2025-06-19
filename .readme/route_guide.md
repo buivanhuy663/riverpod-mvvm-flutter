@@ -16,10 +16,28 @@ import 'package:your_project/view/base/go_router.dart';
 The `RouterPath` class typically contains static methods or constants for defining routes. For example:
 ```dart
 class RouterPath {
-    static const String homeRoute = '/home';
-    static const String settingsRoute = '/settings';
-    static const String loginRoute = '/login';
+  RouterPath._();
+  static const splash = '/';
+  static const login = '/login';
+  static const home = '/home';
 }
+
+/// The route configuration.
+final GoRouter goRouter = GoRouter(
+  navigatorKey: navigatorKey,
+  routes: <RouteBase>[
+    GoRoute(
+      path: '/',
+      builder: (context, state) => const SplashPage(),
+      routes: <RouteBase>[
+        GoRoute(
+          path: RouterPath.login,
+          builder: (context, state) => const LoginPage(),
+        ),
+      ],
+    ),
+  ],
+);
 ```
 
 ### Navigate Between Screens
@@ -64,7 +82,7 @@ class ExampleScreen extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () {
                         if (mounted) {
-                            GoRouteHelper.go(context, RouterPath.settingsRoute);
+                            GoRouteHelper.go(context, RouterPath.login);
                         }
                     },
                     child: Text('Go to Settings'),
@@ -76,6 +94,6 @@ class ExampleScreen extends StatelessWidget {
 ```
 
 In this example:
-- The `RouterPath.settingsRoute` is used to navigate to the settings screen.
+- The `RouterPath.login` is used to navigate to the settings screen.
 - The `GoRouteHelper.go` method ensures consistent navigation logic.
 - The `mounted` check prevents navigation if the widget is no longer in the widget tree.
