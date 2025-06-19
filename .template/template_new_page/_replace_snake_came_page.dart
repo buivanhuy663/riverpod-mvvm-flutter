@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../base/base_page.dart';
+import 'components/counter.dart';
 import 'view_model/_replace_snake_came_state.dart';
 import 'view_model/_replace_snake_came_view_model.dart';
 
@@ -27,7 +28,13 @@ class _ReplacePascalCamePageState
   PreferredSizeWidget? buildAppBar(BuildContext context) => null;
 
   @override
-  Widget buildBody(BuildContext context) => const Center(
-    child: Text('ReplacePascalCame'),
+  Widget buildBody(BuildContext context) => Center(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('NewScreen'),
+        CounterButton(provider: _provider),
+      ],
+    ),
   );
 }
