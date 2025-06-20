@@ -20,6 +20,6 @@ class LoginButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) => ElevatedButton(
     onPressed: onPressed,
-    child: Text(AppText.get?.login_button ?? 'Null Login Button'),
+    child: Text(AppText.of(context)?.login_button ?? 'Null Login Button'),
   );
 }

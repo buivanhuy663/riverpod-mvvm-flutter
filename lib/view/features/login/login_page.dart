@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils/extensions/extensions.dart';
 import '../../base/base_page.dart';
+import '../../base/locale_support.dart';
+import '../../resources/resources.dart';
 import 'components/email_form_field.dart';
 import 'components/login_button.dart';
 import 'components/password_form_field.dart';
@@ -45,6 +47,42 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
             onPressed: () {
               viewModel.onPressLogin(ref).subscribeLoadingFullScreen(this);
             },
+          ),
+          Text(AppText.of(context)?.language ?? ''),
+          Row(
+            children: [
+              ElevatedButton(
+                child: Text(AppText.of(context)?.language_english ?? ''),
+                onPressed: () {
+                  viewModel.onChangeLanguage(ref, SupportLocale.en);
+                },
+              ),
+
+              ElevatedButton(
+                child: Text(AppText.of(context)?.language_vietnam ?? ''),
+                onPressed: () {
+                  viewModel.onChangeLanguage(ref, SupportLocale.vn);
+                },
+              ),
+            ],
+          ),
+          Text(AppText.of(context)?.theme_mode ?? ''),
+          Row(
+            children: [
+              ElevatedButton(
+                child: Text(AppText.of(context)?.dark_mode ?? ''),
+                onPressed: () {
+                  viewModel.onChangeThemeMode(ref, Brightness.dark);
+                },
+              ),
+
+              ElevatedButton(
+                child: Text(AppText.of(context)?.light_mode ?? ''),
+                onPressed: () {
+                  viewModel.onChangeThemeMode(ref, Brightness.light);
+                },
+              ),
+            ],
           ),
           const SizedBox(height: 16),
         ],

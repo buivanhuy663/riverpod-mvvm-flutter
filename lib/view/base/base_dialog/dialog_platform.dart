@@ -34,44 +34,37 @@ class DialogPlatform extends BaseDialog<ActionDialog> {
 
   @override
   Widget build(BuildContext context) {
-    btnCancel = btnCancel.isEmpty
-        ? AppText.get?.cancel_button_dialog ?? 'Null'
-        : '';
-    btnOK = btnOK.isEmpty ? AppText.get?.ok_button_dialog ?? 'Null' : btnOK;
+    btnCancel = btnCancel.isEmpty ? AppText.of(context)?.cancel_button_dialog ?? 'Null' : '';
+    btnOK = btnOK.isEmpty ? AppText.of(context)?.ok_button_dialog ?? 'Null' : btnOK;
 
     return defaultTargetPlatform == TargetPlatform.android || kIsWeb
         ? _androidPlatform(context)
         : _iosPlatform(context);
   }
 
-  CupertinoAlertDialog _iosPlatform(BuildContext context) =>
-      CupertinoAlertDialog(
-        title: title == null
-            ? null
-            : Text(title ?? '', textAlign: TextAlign.center),
-        content: Padding(
-          padding: contentPadding,
-          child: content is String ? Text(content) : content,
+  CupertinoAlertDialog _iosPlatform(BuildContext context) => CupertinoAlertDialog(
+    title: title == null ? null : Text(title ?? '', textAlign: TextAlign.center),
+    content: Padding(
+      padding: contentPadding,
+      child: content is String ? Text(content) : content,
+    ),
+    actions: <Widget>[
+      if (type == TypeDialog.confirm)
+        _cupertinoButtonCustom(
+          context,
+          txtButton: btnCancel,
+          response: ActionDialog.cancel,
         ),
-        actions: <Widget>[
-          if (type == TypeDialog.confirm)
-            _cupertinoButtonCustom(
-              context,
-              txtButton: btnCancel,
-              response: ActionDialog.cancel,
-            ),
-          _cupertinoButtonCustom(
-            context,
-            txtButton: btnOK,
-            response: ActionDialog.ok,
-          ),
-        ],
-      );
+      _cupertinoButtonCustom(
+        context,
+        txtButton: btnOK,
+        response: ActionDialog.ok,
+      ),
+    ],
+  );
 
   AlertDialog _androidPlatform(BuildContext context) => AlertDialog(
-    title: title == null
-        ? null
-        : Text(title ?? '', textAlign: TextAlign.center),
+    title: title == null ? null : Text(title ?? '', textAlign: TextAlign.center),
     content: Padding(
       padding: contentPadding,
       child: content is String ? Text(content) : content,

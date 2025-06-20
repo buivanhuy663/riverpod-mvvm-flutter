@@ -17,10 +17,10 @@ class EmailFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     LoggerHelper.info('EmailFormField');
     return CustomTextFormField(
-      hintText: AppText.get?.enter_email,
-      labelText: AppText.get?.email,
+      hintText: AppText.of(context)?.enter_email,
+      labelText: AppText.of(context)?.email,
       keyboardType: TextInputType.emailAddress,
-      errorText: provider.listen(ref, (value) => value.email.errorText),
+      errorText: provider.listen(ref, (value) => value.email.errorText(context)),
       onChanged: provider.viewModel(ref).onEmailChanged,
     );
   }

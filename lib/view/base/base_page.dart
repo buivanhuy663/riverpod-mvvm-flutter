@@ -90,7 +90,7 @@ abstract class BasePageState<Page extends BasePage, VM extends BaseViewModel>
             }
           : null,
       child: Scaffold(
-        backgroundColor: backgroundColor ?? AppColors.get.background,
+        backgroundColor: AppColors.of(context).background,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         appBar: buildAppBar(context),
         body: buildBody(context),
@@ -116,7 +116,7 @@ abstract class BasePageState<Page extends BasePage, VM extends BaseViewModel>
   /// If override this function, you should not call super,
   /// dialog error will show the first error of the page
   Future<void> handleError(Object? error) async {
-    await DialogPlatform(content: ErrorHelper.getError(error)).show(context);
+    await DialogPlatform(content: ErrorHelper.getError(context, error)).show(context);
   }
 
   /// If override this function, you should not call super,

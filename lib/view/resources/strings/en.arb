@@ -20,6 +20,12 @@
   "server_error": "Server error. Please try again later.",
   "timeout_error": "Request timed out. Please try again later.",
   "@ other ------------------------------------------------------------------------": "",
+  "language" : "Language",
+  "language_english": "English",
+  "language_vietnam": "Vietnamese",
+  "theme_mode": "Theme mode",
+  "dark_mode": "Dark",
+  "light_mode": "Light",
   "unknown_error": "An unknown error occurred. Please try again later.",
   "@end": ""
 }

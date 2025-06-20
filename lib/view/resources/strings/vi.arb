@@ -15,10 +15,17 @@
   "enter_password": "Nhập mật khẩu của bạn",
   "password_required": "Mật khẩu là bắt buộc.",
   "password_invalid": "Vui lòng nhập mật khẩu hợp lệ.",
-  "@ other -------------------------------------------------------------------------": "",
+  "@ network -------------------------------------------------------------------------": "",
   "network_error": "Lỗi mạng. Vui lòng kiểm tra kết nối của bạn và thử lại.",
   "server_error": "Lỗi máy chủ. Vui lòng thử lại sau.",
   "timeout_error": "Yêu cầu đã hết thời gian chờ. Vui lòng thử lại sau.",
+  "@ other -------------------------------------------------------------------------": "",
+  "language" : "Ngôn ngữ",
+  "language_english": "Tiếng Anh",
+  "language_vietnam": "Tiếng Việt",
+  "theme_mode": "Giao diện",
+  "dark_mode": "Tối",
+  "light_mode": "Sáng",
   "unknown_error": "Đã xảy ra lỗi không xác định. Vui lòng thử lại sau.",
   "@end": ""
 }

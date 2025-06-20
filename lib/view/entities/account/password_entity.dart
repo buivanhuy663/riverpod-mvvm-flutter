@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../utils/extensions/extensions.dart';
@@ -17,13 +18,13 @@ sealed class PasswordEntity with _$PasswordEntity {
 
   bool get valid => _isPassword();
 
-  String? get errorText {
+  String? errorText(BuildContext context) {
     if (value == null || _isPassword()) {
       return null;
     } else if (value.isNullOrEmpty) {
-      return AppText.get?.password_required;
+      return AppText.of(context)?.password_required;
     } else {
-      return AppText.get?.password_invalid;
+      return AppText.of(context)?.password_invalid;
     }
   }
 

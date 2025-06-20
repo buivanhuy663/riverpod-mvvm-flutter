@@ -7,4 +7,6 @@ class AppText {
     final ctx = navigatorKey.currentContext;
     return ctx != null ? AppLocalizations.of(ctx) : null;
   }
+
+  static AppLocalizations? of(context) => AppLocalizations.of(context);
 }

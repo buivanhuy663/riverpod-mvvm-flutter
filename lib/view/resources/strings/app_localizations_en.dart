@@ -62,5 +62,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get timeout_error => 'Request timed out. Please try again later.';
 
   @override
+  String get language => 'Language';
+
+  @override
+  String get language_english => 'English';
+
+  @override
+  String get language_vietnam => 'Vietnamese';
+
+  @override
+  String get theme_mode => 'Theme mode';
+
+  @override
+  String get dark_mode => 'Dark';
+
+  @override
+  String get light_mode => 'Light';
+
+  @override
   String get unknown_error => 'An unknown error occurred. Please try again later.';
 }

@@ -62,5 +62,23 @@ class AppLocalizationsVi extends AppLocalizations {
   String get timeout_error => 'Yêu cầu đã hết thời gian chờ. Vui lòng thử lại sau.';
 
   @override
+  String get language => 'Ngôn ngữ';
+
+  @override
+  String get language_english => 'Tiếng Anh';
+
+  @override
+  String get language_vietnam => 'Tiếng Việt';
+
+  @override
+  String get theme_mode => 'Giao diện';
+
+  @override
+  String get dark_mode => 'Tối';
+
+  @override
+  String get light_mode => 'Sáng';
+
+  @override
   String get unknown_error => 'Đã xảy ra lỗi không xác định. Vui lòng thử lại sau.';
 }

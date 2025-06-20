@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../main/app_flavor.dart';
 import '../main/dependence.dart';
 import 'base/app_lifecycle.dart';
+import 'base/base_page.dart';
 import 'base/go_router.dart';
 import 'base/locale_support.dart';
 import 'base/responsive_wrapper.dart';
@@ -21,8 +22,7 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App>
-    with WidgetsBindingObserver, AppLifecycleMixin {
+class _AppState extends State<App> with WidgetsBindingObserver, AppLifecycleMixin {
   final _appLifecycle = injector.read(appLifecycleProvider);
 
   @override
@@ -48,7 +48,7 @@ class _AppState extends State<App>
   Widget build(BuildContext context) => Consumer(
     builder: (context, ref, child) => MaterialApp.router(
       routerConfig: goRouter,
-      locale: ref.watch(localeProvider),
+      locale: localeProvider.listen(ref, (locale) => locale),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

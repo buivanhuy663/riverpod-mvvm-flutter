@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 import '../../view/resources/resources.dart';
 import '../extensions/extensions.dart';
@@ -8,9 +9,9 @@ import '../extensions/extensions.dart';
 class ErrorHelper {
   ErrorHelper._();
 
-  static String getError(Object? error) {
+  static String getError(BuildContext context, Object? error) {
     var errorMessage = '';
-    final unknownError = AppText.get?.unknown_error ?? 'Unknown error occurred';
+    final unknownError = AppText.of(context)?.unknown_error ?? 'Unknown error occurred';
     if (error is DioException) {
       final response = error.response;
       if (response != null) {
@@ -22,9 +23,7 @@ class ErrorHelper {
           errorMessage = error.response?.statusMessage ?? unknownError;
         }
       } else {
-        errorMessage = error.message.isNullOrBlank
-            ? unknownError
-            : error.message ?? '';
+        errorMessage = error.message.isNullOrBlank ? unknownError : error.message ?? '';
       }
     } else if (error is Exception) {
       errorMessage = error.toString();

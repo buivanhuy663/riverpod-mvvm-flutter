@@ -17,10 +17,10 @@ class PasswordFormField extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     LoggerHelper.info('PasswordFormField');
     return CustomTextFormField(
-      hintText: AppText.get?.enter_password,
-      labelText: AppText.get?.password,
+      hintText: AppText.of(context)?.enter_password,
+      labelText: AppText.of(context)?.password,
       keyboardType: TextInputType.text,
-      errorText: provider.listen(ref, (value) => value.password.errorText),
+      errorText: provider.listen(ref, (value) => value.password.errorText(context)),
       onChanged: provider.viewModel(ref).onPasswordChanged,
     );
   }

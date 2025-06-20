@@ -195,6 +195,42 @@ abstract class AppLocalizations {
   /// **'Request timed out. Please try again later.'**
   String get timeout_error;
 
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @language_english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get language_english;
+
+  /// No description provided for @language_vietnam.
+  ///
+  /// In en, this message translates to:
+  /// **'Vietnamese'**
+  String get language_vietnam;
+
+  /// No description provided for @theme_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme mode'**
+  String get theme_mode;
+
+  /// No description provided for @dark_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark_mode;
+
+  /// No description provided for @light_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light_mode;
+
   /// No description provided for @unknown_error.
   ///
   /// In en, this message translates to:

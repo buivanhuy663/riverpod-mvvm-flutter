@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../data/models/auth/login_response_model.dart';
 import '../../../base/base_page.dart';
 import '../../../base/locale_support.dart';
+import '../../../base/theme_support.dart';
 import '../../../entities/account/email_entity.dart';
 import '../../../entities/account/password_entity.dart';
 import 'login_state.dart';
@@ -26,12 +29,12 @@ class LoginViewModel extends BaseViewModel<LoginState> {
     );
   }
 
-  void onChangeLocale(WidgetRef ref) {
-    state = state.copyWith(isValidButton: !state.isValidButton);
+  void onChangeThemeMode(WidgetRef ref, Brightness mode) {
+    themeProvider.viewModel(ref).setBrightness(mode);
+  }
 
-    localeProvider
-        .viewModel(ref)
-        .setLocale(state.isValidButton ? SupportLocale.en : SupportLocale.vn);
+  void onChangeLanguage(WidgetRef ref, Locale lang) {
+    localeProvider.viewModel(ref).setLocale(lang);
   }
 
   Future<LoginResponseModel?> onPressLogin(WidgetRef ref) async {

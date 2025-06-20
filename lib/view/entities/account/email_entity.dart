@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../utils/constants/regex_constants.dart';
@@ -17,15 +18,15 @@ sealed class EmailEntity with _$EmailEntity {
 
   bool get valid => _isEmail();
 
-  String? get errorText {
+  String? errorText(BuildContext context) {
     if (_isEmail()) {
       return null;
     } else if (value == null) {
       return null;
     } else if (value?.isEmpty ?? false) {
-      return AppText.get?.email_required;
+      return AppText.of(context)?.email_required;
     } else {
-      return AppText.get?.email_invalid;
+      return AppText.of(context)?.email_invalid;
     }
   }
 
