@@ -38,6 +38,8 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 64),
+          AppImages.flutter,
+          const SizedBox(height: 16),
           EmailFormField(provider: _provider),
           const SizedBox(height: 8),
           PasswordFormField(provider: _provider),

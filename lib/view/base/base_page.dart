@@ -185,7 +185,7 @@ mixin BasePageMixin {
 
   /// If this property is `true`
   /// then it will allow tap outside the screen to hide the keyboard
-  bool get tapOutsideHideKeyBoard => false;
+  bool get tapOutsideHideKeyBoard => true;
 
   /// This is page background color
   Color? get backgroundColor => null;
