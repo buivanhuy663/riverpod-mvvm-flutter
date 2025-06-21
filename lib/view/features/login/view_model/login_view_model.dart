@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../data/models/auth/login_request_model.dart';
 import '../../../../data/models/auth/login_response_model.dart';
 import '../../../base/base_page.dart';
 import '../../../base/locale_support.dart';
@@ -38,7 +39,7 @@ class LoginViewModel extends BaseViewModel<LoginState> {
   }
 
   Future<LoginResponseModel?> onPressLogin(WidgetRef ref) async {
-    await Future.delayed(const Duration(seconds: 3));
+    await repository.auth.login(const LoginRequestModel(email: 'asd', password: 'password'));
     return null;
   }
 }

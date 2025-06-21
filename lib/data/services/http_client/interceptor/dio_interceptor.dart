@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 
 import '../../../../main/dependence.dart';
 import '../../../../utils/helpers/network_helper.dart';
-import '../../../../view/resources/resources.dart';
 import '../../../models/core/api_response_model.dart';
 import '../../../repositories/repository.dart';
 import '../api_constants.dart';
@@ -29,7 +28,7 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
       handler.reject(
         DioException(
           requestOptions: options,
-          error: AppText.get?.network_error,
+          type: DioExceptionType.connectionError,
         ),
       );
       return;
@@ -42,19 +41,9 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
 
     final Map<String, String> headers = {
       'Accept': 'application/json',
-      'Accept-Encoding': 'gzip, deflate, br, zstd',
       'Accept-Language': 'vi',
       'Connection': 'keep-alive',
       'Content-Type': 'application/json;charset=UTF-8',
-      'Host': 'cskh-api.cpc.vn',
-      'Sec-Fetch-Dest': 'empty',
-      'Sec-Fetch-Mode': 'cors',
-      'Sec-Fetch-Site': 'same-site',
-      'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
-      'sec-ch-ua': "'Not(A:Brand';v='99', 'Google Chrome';v='133', 'Chromium';v='133'",
-      'sec-ch-ua-mobile': '?0',
-      'sec-ch-ua-platform': "'Windows'",
     };
     options.headers.addAll(headers);
 
@@ -74,7 +63,18 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
         ),
       );
     }
-    super.onResponse(response, handler);
+    if(response.statusCode == HttpStatus.ok) {
+      super.onResponse(response, handler);
+    }else {
+      throw DioException(
+        requestOptions: response.requestOptions,
+        response: Response(
+          statusCode: response.statusCode,
+          requestOptions: response.requestOptions,
+          data: response.data,
+        ),
+      );
+    }
   }
 
   @override
@@ -115,10 +115,7 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
     if (err.type == DioExceptionType.connectionTimeout ||
         err.type == DioExceptionType.receiveTimeout) {
       handler.next(
-        DioException(
-          requestOptions: requestOptions,
-          error: AppText.get?.timeout_error,
-        ),
+        DioException(requestOptions: requestOptions, type: DioExceptionType.connectionTimeout),
       );
       return;
     }
@@ -129,7 +126,7 @@ class DioInterceptor extends QueuedInterceptorsWrapper {
       handler.next(
         DioException(
           requestOptions: err.requestOptions,
-          error: AppText.get?.network_error,
+          type: DioExceptionType.connectionError,
         ),
       );
       return;

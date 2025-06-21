@@ -37,9 +37,19 @@ class DialogPlatform extends BaseDialog<ActionDialog> {
     btnCancel = btnCancel.isEmpty ? AppText.of(context)?.cancel_button_dialog ?? 'Null' : '';
     btnOK = btnOK.isEmpty ? AppText.of(context)?.ok_button_dialog ?? 'Null' : btnOK;
 
-    return defaultTargetPlatform == TargetPlatform.android || kIsWeb
+    defaultTargetPlatform == TargetPlatform.android || kIsWeb
         ? _androidPlatform(context)
         : _iosPlatform(context);
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (defaultTargetPlatform == TargetPlatform.android || kIsWeb)
+          _androidPlatform(context)
+        else
+          _iosPlatform(context),
+      ],
+    );
   }
 
   CupertinoAlertDialog _iosPlatform(BuildContext context) => CupertinoAlertDialog(

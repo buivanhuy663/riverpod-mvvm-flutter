@@ -34,7 +34,7 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 64),
@@ -45,10 +45,21 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
           LoginButton(
             provider: _provider,
             onPressed: () {
-              viewModel.onPressLogin(ref).subscribeLoadingFullScreen(this);
+              viewModel
+                  .onPressLogin(ref)
+                  .subscribeLoadingFullScreen(this)
+                  .subscribeHandleError(this);
             },
           ),
-          Text(AppText.of(context)?.language ?? ''),
+          const SizedBox(height: 16),
+          Text(
+            AppText.of(context)?.language ?? '',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: AppColors.of(context).text,
+            ),
+          ),
           Row(
             children: [
               ElevatedButton(
@@ -66,7 +77,15 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
               ),
             ],
           ),
-          Text(AppText.of(context)?.theme_mode ?? ''),
+          const SizedBox(height: 16),
+          Text(
+            AppText.of(context)?.theme_mode ?? '',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: AppColors.of(context).text,
+            ),
+          ),
           Row(
             children: [
               ElevatedButton(

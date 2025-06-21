@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
 import '../../models/auth/login_request_model.dart';
@@ -49,7 +50,16 @@ class HttpClient {
     if (response.statusCode == 200) {
       jsonData = jsonDecode(response.body);
     } else {
-      throw Exception('Status code: ${response.statusCode}, Message: ${response.body}');
+      final requestOptions = RequestOptions(path: url);
+      throw DioException(
+        requestOptions: requestOptions,
+        response: Response(
+          requestOptions: requestOptions,
+          statusCode: response.statusCode,
+          statusMessage: response.reasonPhrase,
+        ),
+        type: DioExceptionType.badResponse,
+      );
     }
 
     final accessToken = jsonData['access_token'];

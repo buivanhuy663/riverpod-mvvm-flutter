@@ -22,7 +22,7 @@ class LoadingWrapper extends ConsumerWidget {
         Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.transparent,
+          color: const Color.fromARGB(72, 0, 0, 0),
           child: const Center(child: ProgressIndicatorPlatform()),
         ),
     ],

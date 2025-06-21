@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import '../../view/resources/resources.dart';
-import '../extensions/extensions.dart';
 
 class ErrorHelper {
   ErrorHelper._();
@@ -13,17 +10,13 @@ class ErrorHelper {
     var errorMessage = '';
     final unknownError = AppText.of(context)?.unknown_error ?? 'Unknown error occurred';
     if (error is DioException) {
-      final response = error.response;
-      if (response != null) {
-        try {
-          errorMessage = response.data is String
-              ? jsonDecode(response.data)['error']
-              : response.data['error'];
-        } catch (_) {
-          errorMessage = error.response?.statusMessage ?? unknownError;
-        }
+      final type = error.type;
+      if (type case DioExceptionType.connectionTimeout) {
+        errorMessage = AppText.of(context)?.timeout_error ?? 'Connection timeout';
+      } else if (type case DioExceptionType.connectionError) {
+        errorMessage = AppText.of(context)?.network_error ?? 'Network error';
       } else {
-        errorMessage = error.message.isNullOrBlank ? unknownError : error.message ?? '';
+        errorMessage = AppText.of(context)?.unknown_error ?? 'Unknown error DioException';
       }
     } else if (error is Exception) {
       errorMessage = error.toString();

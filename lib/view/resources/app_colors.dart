@@ -3,17 +3,6 @@ part of 'resources.dart';
 class AppColors {
   AppColors._();
 
-  // static ColorsDefine get get {
-  //   final context = navigatorKey.currentContext;
-  //   final brightness = context != null ? Theme.of(context).brightness : Brightness.light;
-  //   switch (brightness) {
-  //     case Brightness.light:
-  //       return ColorsDefine.colorsLight;
-  //     case Brightness.dark:
-  //       return ColorsDefine.colorsDark;
-  //   }
-  // }
-
   static ColorsDefine of(BuildContext context) {
     switch (Theme.of(context).brightness) {
       case Brightness.light:
