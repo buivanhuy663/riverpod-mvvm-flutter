@@ -61,24 +61,24 @@ Boilerplate for flutter app
 lib/
 ├── main.dart
 ├── data/
-│   ├── models/
-│   ├── repositories/
-│   └── services/
+│   ├── models/
+│   ├── repositories/
+│   └── services/
 ├── utils/
-│   ├── constants/
-│   ├── extensions/
-│   └── helpers/
+│   ├── constants/
+│   ├── extensions/
+│   └── helpers/
 ├── view/
-│   ├── app.dart
-│   ├── base/
-│   ├── entities/
-│   ├── features/
-│   │   └── page_one/
-│   │       ├── page.dart
-│   │       └── view_model/
-│   │           ├── state.dart
-│   │           └── view_model.dart
-│   └── resources/
+│   ├── app.dart
+│   ├── base/
+│   ├── entities/
+│   ├── features/
+│   │   └── page_one/
+│   │       ├── page.dart
+│   │       └── view_model/
+│   │           ├── state.dart
+│   │           └── view_model.dart
+│   └── resources/
 ```
 ### Guide
 1. [Route ](https://github.com/buivanhuy663/riverpod-mvvm-flutter/blob/main/.readme/route_guide.md).
@@ -102,11 +102,11 @@ bash .template/create_new_page.sh new_page_name
 to create a page with struct
 ```
 lib/view/features
-│   │   └── new_page_name/
-│   │       ├── new_page_name.dart
-│   │       └── view_model/
-│   │           ├── new_page_name_state.dart
-│   │           └── new_page_name_view_model.dart
+│   │   └── new_page_name/
+│   │       ├── new_page_name.dart
+│   │       └── view_model/
+│   │           ├── new_page_name_state.dart
+│   │           └── new_page_name_view_model.dart
 ```
 
 Every page needs to inherit from `BasePage` class
