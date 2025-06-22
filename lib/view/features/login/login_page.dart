@@ -3,11 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils/extensions/extensions.dart';
 import '../../base/base_page.dart';
+import '../../base/components/custom_text_form_field.dart';
 import '../../base/locale_support.dart';
 import '../../resources/resources.dart';
-import 'components/email_form_field.dart';
-import 'components/login_button.dart';
-import 'components/password_form_field.dart';
 import 'view_model/login_state.dart';
 import 'view_model/login_view_model.dart';
 
@@ -40,18 +38,37 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
           const SizedBox(height: 64),
           AppImages.flutter,
           const SizedBox(height: 16),
-          EmailFormField(provider: _provider),
+          Consumer(
+            builder: (context, ref, child) => CustomTextFormField(
+              hintText: AppText.of(context)?.enter_email,
+              labelText: AppText.of(context)?.email,
+              keyboardType: TextInputType.emailAddress,
+              errorText: _provider.listen(ref, (value) => value.email.errorText(context)),
+              onChanged: _provider.viewModel(ref).onEmailChanged,
+            ),
+          ),
           const SizedBox(height: 8),
-          PasswordFormField(provider: _provider),
+          Consumer(
+            builder: (context, ref, child) => CustomTextFormField(
+              hintText: AppText.of(context)?.enter_password,
+              labelText: AppText.of(context)?.password,
+              keyboardType: TextInputType.text,
+              errorText: _provider.listen(ref, (value) => value.password.errorText(context)),
+              onChanged: _provider.viewModel(ref).onPasswordChanged,
+            ),
+          ),
           const SizedBox(height: 16),
-          LoginButton(
-            provider: _provider,
-            onPressed: () {
-              viewModel
-                  .onPressLogin(ref)
-                  .subscribeLoadingFullScreen(this)
-                  .subscribeHandleError(this);
-            },
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              child: Text(AppText.of(context)?.login_button ?? 'login_button'),
+              onPressed: () {
+                viewModel
+                    .onPressLogin(ref)
+                    .subscribeLoadingFullScreen(this)
+                    .subscribeHandleError(this);
+              },
+            ),
           ),
           const SizedBox(height: 16),
           Text(
@@ -70,7 +87,6 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
                   viewModel.onChangeLanguage(ref, SupportLocale.en);
                 },
               ),
-
               ElevatedButton(
                 child: Text(AppText.of(context)?.language_vietnam ?? ''),
                 onPressed: () {
