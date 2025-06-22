@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils/extensions/extensions.dart';
 import '../../base/base_page.dart';
-import '../../base/components/custom_text_form_field.dart';
 import '../../base/locale_support.dart';
 import '../../resources/resources.dart';
+import 'components/login_panel.dart';
 import 'view_model/login_state.dart';
 import 'view_model/login_view_model.dart';
 
@@ -38,37 +38,9 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
           const SizedBox(height: 64),
           AppImages.flutter,
           const SizedBox(height: 16),
-          Consumer(
-            builder: (context, ref, child) => CustomTextFormField(
-              hintText: AppText.of(context)?.enter_email,
-              labelText: AppText.of(context)?.email,
-              keyboardType: TextInputType.emailAddress,
-              errorText: _provider.listen(ref, (value) => value.email.errorText(context)),
-              onChanged: _provider.viewModel(ref).onEmailChanged,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Consumer(
-            builder: (context, ref, child) => CustomTextFormField(
-              hintText: AppText.of(context)?.enter_password,
-              labelText: AppText.of(context)?.password,
-              keyboardType: TextInputType.text,
-              errorText: _provider.listen(ref, (value) => value.password.errorText(context)),
-              onChanged: _provider.viewModel(ref).onPasswordChanged,
-            ),
-          ),
-          const SizedBox(height: 16),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              child: Text(AppText.of(context)?.login_button ?? 'login_button'),
-              onPressed: () {
-                viewModel
-                    .onPressLogin(ref)
-                    .subscribeLoadingFullScreen(this)
-                    .subscribeHandleError(this);
-              },
-            ),
+          LoginPanel(
+            provider: _provider,
+            onPressLogin: onPressLogin,
           ),
           const SizedBox(height: 16),
           Text(
@@ -83,15 +55,11 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
             children: [
               ElevatedButton(
                 child: Text(AppText.of(context)?.language_english ?? ''),
-                onPressed: () {
-                  viewModel.onChangeLanguage(ref, SupportLocale.en);
-                },
+                onPressed: () => viewModel.onChangeLanguage(ref, SupportLocale.en),
               ),
               ElevatedButton(
                 child: Text(AppText.of(context)?.language_vietnam ?? ''),
-                onPressed: () {
-                  viewModel.onChangeLanguage(ref, SupportLocale.vn);
-                },
+                onPressed: () => viewModel.onChangeLanguage(ref, SupportLocale.vn),
               ),
             ],
           ),
@@ -108,16 +76,12 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
             children: [
               ElevatedButton(
                 child: Text(AppText.of(context)?.dark_mode ?? ''),
-                onPressed: () {
-                  viewModel.onChangeThemeMode(ref, Brightness.dark);
-                },
+                onPressed: () => viewModel.onChangeThemeMode(ref, Brightness.dark),
               ),
 
               ElevatedButton(
                 child: Text(AppText.of(context)?.light_mode ?? ''),
-                onPressed: () {
-                  viewModel.onChangeThemeMode(ref, Brightness.light);
-                },
+                onPressed: () => viewModel.onChangeThemeMode(ref, Brightness.light),
               ),
             ],
           ),
@@ -126,4 +90,12 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
       ),
     ),
   );
+
+  void onPressLogin() {
+    _provider
+        .viewModel(ref)
+        .onPressLogin(ref)
+        .subscribeLoadingFullScreen(this)
+        .subscribeHandleError(this);
+  }
 }
