@@ -11,9 +11,7 @@ extension BuildContextEx on BuildContext {
 
   bool get isDesktop => screenSize.width >= ResponsiveBoundary.minDesktop;
 
-  bool get isLandscape =>
-      MediaQuery.of(this).orientation == Orientation.landscape;
+  bool get isLandscape => MediaQuery.of(this).orientation == Orientation.landscape;
 
-  bool get isPortrait =>
-      MediaQuery.of(this).orientation == Orientation.portrait;
+  bool get isPortrait => MediaQuery.of(this).orientation == Orientation.portrait;
 }

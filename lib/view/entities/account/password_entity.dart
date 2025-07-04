@@ -22,9 +22,9 @@ sealed class PasswordEntity with _$PasswordEntity {
     if (value == null || _isPassword()) {
       return null;
     } else if (value.isNullOrEmpty) {
-      return AppText.of(context)?.password_required;
+      return context.strings.password_required;
     } else {
-      return AppText.of(context)?.password_invalid;
+      return context.strings.password_invalid;
     }
   }
 

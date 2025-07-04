@@ -22,8 +22,8 @@ class LoginPanel extends StatelessWidget {
     children: [
       Consumer(
         builder: (context, ref, child) => CustomTextFormField(
-          hintText: AppText.of(context)?.enter_email,
-          labelText: AppText.of(context)?.email,
+          hintText: context.strings.enter_email,
+          labelText: context.strings.email,
           keyboardType: TextInputType.emailAddress,
           errorText: provider.listen(ref, (value) => value.email.errorText(context)),
           onChanged: provider.viewModel(ref).onEmailChanged,
@@ -32,8 +32,8 @@ class LoginPanel extends StatelessWidget {
       const SizedBox(height: 8),
       Consumer(
         builder: (context, ref, child) => CustomTextFormField(
-          hintText: AppText.of(context)?.enter_password,
-          labelText: AppText.of(context)?.password,
+          hintText: context.strings.enter_password,
+          labelText: context.strings.password,
           keyboardType: TextInputType.text,
           errorText: provider.listen(ref, (value) => value.password.errorText(context)),
           onChanged: provider.viewModel(ref).onPasswordChanged,
@@ -44,7 +44,7 @@ class LoginPanel extends StatelessWidget {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: onPressLogin,
-          child: Text(AppText.of(context)?.login_button ?? 'login_button'),
+          child: Text(context.strings.login_button),
         ),
       ),
     ],

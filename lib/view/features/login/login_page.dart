@@ -44,43 +44,43 @@ class _LoginPageState extends BasePageState<LoginPage, LoginViewModel> {
           ),
           const SizedBox(height: 16),
           Text(
-            AppText.of(context)?.language ?? '',
+            context.strings.language,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: AppColors.of(context).text,
+              color: context.colors.text,
             ),
           ),
           Row(
             children: [
               ElevatedButton(
-                child: Text(AppText.of(context)?.language_english ?? ''),
+                child: Text(context.strings.language_english),
                 onPressed: () => viewModel.onChangeLanguage(ref, SupportLocale.en),
               ),
               ElevatedButton(
-                child: Text(AppText.of(context)?.language_vietnam ?? ''),
+                child: Text(context.strings.language_vietnam),
                 onPressed: () => viewModel.onChangeLanguage(ref, SupportLocale.vn),
               ),
             ],
           ),
           const SizedBox(height: 16),
           Text(
-            AppText.of(context)?.theme_mode ?? '',
+            context.strings.theme_mode,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: AppColors.of(context).text,
+              color: context.colors.text,
             ),
           ),
           Row(
             children: [
               ElevatedButton(
-                child: Text(AppText.of(context)?.dark_mode ?? ''),
+                child: Text(context.strings.dark_mode),
                 onPressed: () => viewModel.onChangeThemeMode(ref, Brightness.dark),
               ),
 
               ElevatedButton(
-                child: Text(AppText.of(context)?.light_mode ?? ''),
+                child: Text(context.strings.light_mode),
                 onPressed: () => viewModel.onChangeThemeMode(ref, Brightness.light),
               ),
             ],

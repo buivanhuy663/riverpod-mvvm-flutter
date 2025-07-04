@@ -8,15 +8,15 @@ class ErrorHelper {
 
   static String getError(BuildContext context, Object? error) {
     var errorMessage = '';
-    final unknownError = AppText.of(context)?.unknown_error ?? 'Unknown error occurred';
+    final unknownError = context.strings.unknown_error;
     if (error is DioException) {
       final type = error.type;
       if (type case DioExceptionType.connectionTimeout) {
-        errorMessage = AppText.of(context)?.timeout_error ?? 'Connection timeout';
+        errorMessage = context.strings.timeout_error;
       } else if (type case DioExceptionType.connectionError) {
-        errorMessage = AppText.of(context)?.network_error ?? 'Network error';
+        errorMessage = context.strings.network_error;
       } else {
-        errorMessage = AppText.of(context)?.unknown_error ?? 'Unknown error DioException';
+        errorMessage = context.strings.unknown_error;
       }
     } else if (error is Exception) {
       errorMessage = error.toString();

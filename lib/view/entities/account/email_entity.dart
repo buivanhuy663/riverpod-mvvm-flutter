@@ -24,9 +24,9 @@ sealed class EmailEntity with _$EmailEntity {
     } else if (value == null) {
       return null;
     } else if (value?.isEmpty ?? false) {
-      return AppText.of(context)?.email_required;
+      return context.strings.email_required;
     } else {
-      return AppText.of(context)?.email_invalid;
+      return context.strings.email_invalid;
     }
   }
 

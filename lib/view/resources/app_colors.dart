@@ -1,18 +1,5 @@
 part of 'resources.dart';
 
-class AppColors {
-  AppColors._();
-
-  static ColorsDefine of(BuildContext context) {
-    switch (Theme.of(context).brightness) {
-      case Brightness.light:
-        return ColorsDefine.colorsLight;
-      case Brightness.dark:
-        return ColorsDefine.colorsDark;
-    }
-  }
-}
-
 class ColorsDefine {
   const ColorsDefine({
     required this.blueMain,

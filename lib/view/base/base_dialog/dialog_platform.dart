@@ -34,8 +34,8 @@ class DialogPlatform extends BaseDialog<ActionDialog> {
 
   @override
   Widget build(BuildContext context) {
-    btnCancel = btnCancel.isEmpty ? AppText.of(context)?.cancel_button_dialog ?? 'Null' : '';
-    btnOK = btnOK.isEmpty ? AppText.of(context)?.ok_button_dialog ?? 'Null' : btnOK;
+    btnCancel = btnCancel.isEmpty ? context.strings.cancel_button_dialog : '';
+    btnOK = btnOK.isEmpty ? context.strings.ok_button_dialog : btnOK;
 
     defaultTargetPlatform == TargetPlatform.android || kIsWeb
         ? _androidPlatform(context)
