@@ -56,7 +56,7 @@ class _AppState extends State<App> with WidgetsBindingObserver, AppLifecycleMixi
       ],
       supportedLocales: SupportLocale.support,
       theme: ThemeData(
-        brightness: ref.watch(themeProvider),
+        brightness: themeProvider.listen(ref, (theme) => theme),
       ),
       builder: (context, widget) => getResponsiveWrapper(context, widget),
     ),
