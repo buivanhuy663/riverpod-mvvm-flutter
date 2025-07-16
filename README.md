@@ -31,29 +31,29 @@ Boilerplate for flutter app
 
 
 ## Library
-| Category          | Library                 | Version     |
-|-------------------|-------------------------|-------------|
-| **State management** | flutter_riverpod         | ^2.6.1      |
-| **UI**               | cupertino_icons          | ^1.0.8      |
-|                      | cached_network_image     | ^3.4.1      |
-|                      | flutter_svg              | ^2.2.0      |
-|                      | visibility_detector      | ^0.4.0+2    |
-| **REST API**         | http                     | ^1.4.0      |
-|                      | dio                      | ^5.8.0+1    |
-|                      | retrofit                 | ^4.1.0      |
-| **Store**            | shared_preferences       | ^2.5.3      |
-|                      | flutter_secure_storage   | ^9.2.4      |
-| **Utils**            | device_info_plus         | ^11.4.0     |
-|                      | package_info_plus        | ^8.3.0      |
-|                      | connectivity_plus        | ^6.1.4      |
-|                      | window_manager           | ^0.5.0      |
-|                      | freezed                  | ^3.0.6      |
-|                      | freezed_annotation       | ^3.0.0      |
-|                      | go_router                | ^15.1.3     |
-|                      | json_annotation          | ^4.9.0      |
-|                      | logger                   | ^2.5.0      |
-|                      | responsive_framework     | ^1.5.1      |
-|                      | pretty_dio_logger        | ^1.4.0      |
+| Category             | Library                  |
+|----------------------|------------------------- |
+| **State management** | flutter_riverpod         |
+| **UI**               | cupertino_icons          |
+|                      | cached_network_image     |
+|                      | flutter_svg              |
+|                      | visibility_detector      |
+| **REST API**         | http                     |
+|                      | dio                      |
+|                      | retrofit                 |
+| **Store**            | shared_preferences       |
+|                      | flutter_secure_storage   |
+| **Utils**            | device_info_plus         |
+|                      | package_info_plus        |
+|                      | connectivity_plus        |
+|                      | window_manager           |
+|                      | freezed                  |
+|                      | freezed_annotation       |
+|                      | go_router                |
+|                      | json_annotation          |
+|                      | logger                   |
+|                      | responsive_framework     |
+|                      | pretty_dio_logger        |
 
 
 ## File struct
